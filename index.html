@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array problem</title>
+</head>
+
+<body>
+    <script>
+        //check if an element is  present in an array using js
+        const arr = [1, 2, 3, 4, 5, 6, 7]
+        if (arr.includes(2)) {
+            console.log("2 is present in array")
+        }
+        else {
+            console.log('2 is not present in array')
+        }
+        // //js program to swap first and last element in an array
+        let arr1 = [1, 2, 3, 4, 5, 6, 7]
+        let temp = arr1[0]
+        arr1[0] = arr1[arr1.length - 1]
+        arr1[arr1.length - 1] = temp
+        console.log("Array after swap first and last element", arr1)
+        //js program to delete middel element  from an array
+        let arr2 = [1, 2, 3, 4, 5, 6, 7, 8]
+        let middel = Math.floor(arr2.length / 2)
+        arr2.splice(middel, 1)
+        console.log(arr2)
+        //copy array item into another array in js
+        const orignalarr = [1, 2, 3, 4, 5, 6, 7, 8]
+        const copiedarr = [...orignalarr]
+        console.log(copiedarr)
+        //create array of integer between two number inclusive in js
+        function createarr(start, end) {
+            let result = []
+            for (let i = start; i <= end; i++) {
+                result.push(i)
+            }
+            return result
+
+        }
+        let data = createarr(2, 6)
+        console.log(data)
+        //js program to find largest three element in an array
+        function lagrethreeno(arr) {
+            const sortarray = arr.sort((a, b) => b - a)
+            const [first, second, third] = sortarray.slice(0, 3)
+            return {
+                "first largest element": first,
+                "second largest element": second,
+                "third largest element": third
+            }
+        }
+        const inputarray = [3, 7, 9, 2, 7, 8, 6, 9]
+        const output = lagrethreeno(inputarray)
+        console.log(output)
+        //js program to check an array is sorted or not
+
+
+        function checkSorted(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        const arr6 = [32, 39, 48, 56];
+        console.log(checkSorted(arr6));
+        //js program to reorder an array according to given index
+
+
+        function reorderArray(originalArray, indexesArray) {
+            return indexesArray.map(
+                index => originalArray[index]);
+        }
+
+        const originalArray =
+            ['banana', 'orenge', 'apple', 'mango'];
+        const indexesArray = [3, 1, 2, 0];
+        const reorderedArray =
+            reorderArray(originalArray, indexesArray);
+        console.log(reorderedArray);
+            </script>
+</body>
+
+</html>
